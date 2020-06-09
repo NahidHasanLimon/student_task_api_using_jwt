@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth.jwt'], function () {
 });
 
  Route::get('tasks_all', 'TaskController@task_for_all_user');
-  Route::get('tasks_alltest', 'TestController@index');
+Route::get('tasks_alltest', 'TestController@index');
 
 
  // start of student api
@@ -42,9 +42,7 @@ Route::group(['middleware' => 'auth.jwt'], function () {
 
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'APIController@logout');
-
     Route::get('student', 'StudentController@index');
-    
     Route::get('student/{id}', 'StudentController@show');
     Route::post('student', 'StudentController@store');
     Route::put('student/{id}', 'StudentController@update');
